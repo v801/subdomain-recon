@@ -27,7 +27,7 @@ getDomainName() {
   printf "Domain to scan: "
   read domain
   if [ "$domain" = "" ]; then
-    printf "Domain cannot be empty.\n"
+    printf "[!] Domain cannot be empty.\n"
     exit 1
   fi
 }
