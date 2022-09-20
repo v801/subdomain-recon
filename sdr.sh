@@ -22,7 +22,6 @@ checkDependency() {
   fi
 }
 
-
 ## read domain name
 getDomainName() {
   printf "Domain to scan: "
@@ -68,7 +67,6 @@ probeAssets() {
   probeCount=$(< ${probedPath} wc -l)
   printf "[+] Found ${probeCount} subdomains with a response ...\n"
 }
-
 
 ## print a message when all previous functions have run
 displayDoneMessage() {
