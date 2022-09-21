@@ -50,7 +50,7 @@ getAssets() {
   else
     mkdir --parents ${reconDir}/${domain}
     printf "[+] Finding subdomains ...\n"
-    # run assetfinder, grep for same domains only, remove duplicates, write output
+    # run assetfinder, grep for same domains only, remove duplicates/www subdomains, write output
     assetfinder ${domain}|grep ${domain}|sort -u|sed '/www./d' > ${assetsPath}
     # get count and print
     domainCount=$(< ${assetsPath} wc -l)
@@ -68,12 +68,12 @@ probeAssets() {
   printf "[+] Found ${probeCount} subdomains with a response ...\n"
 }
 
-## print a message when all previous functions have run
+## print done message
 displayDoneMessage() {
   printf "[+] Done!\n"
 }
 
-# main function
+## main function
 main() {
   checkDependency
   getDomainName
