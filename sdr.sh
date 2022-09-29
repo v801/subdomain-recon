@@ -3,6 +3,7 @@
 # exit immediately on non-zero exit status
 set -e
 
+## colored 'icons'
 iconOk="\033[32m[+]\033[0m"
 iconError="\033[31m[!]\033[0m"
 
