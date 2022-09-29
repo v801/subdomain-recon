@@ -20,6 +20,11 @@ Install latest from master branch for `--prefer-https` support.
 go install github.com/tomnomnom/httprobe@master
 ```
 
+[Subjack](https://github.com/haccer/subjack): Subdomain Takeover tool designed to scan a list of subdomains concurrently and identify ones that are able to be hijacked.
+
+```
+go install github.com/haccer/subjack@latest
+```
 
 ## Usage
 
@@ -34,17 +39,20 @@ Domain to scan: totallyrealsite.com
 [+] Found 10 unique subdomains for totallyrealsite.com ...
 [+] Probing subdomains for response ...
 [+] Found 8 subdomains with a response ...
-[+] Done!
+[+] Checking subdomains for subdomain takeover ...
+[+] Done! Recon files logged to: recon/totallyrealsite.com
+[+] Completed in 7 seconds.
 ```
 
-Output for both the assetfinder and httprobe scans can be found in:
+Output for the assetfinder, httprobe and subjack scans can be found in:
 ```
 $ ls recon/totallyrealsite.com
 recon/totallyrealsite.com/totallyrealsite.com.assets
 recon/totallyrealsite.com/totallyrealsite.com.probed
+recon/totallyrealsite.com/totallyrealsite.com.subjack
 ```
 
 ## TODO
 
-- Chain this automated process further with tools like [subjack](https://github.com/haccer/subjack), [gowitness](https://github.com/sensepost/gowitness), and nmap.
+- Chain this automated process further with tools like [gowitness](https://github.com/sensepost/gowitness) and nmap.
 - Scrape and pull files from wayback machine.
